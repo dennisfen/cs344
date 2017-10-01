@@ -28,13 +28,14 @@ if(CUDA_FOUND)
 
   # add -Wextra compiler flag for gcc compilations
   if (UNIX)
-    set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS} "-Xcompiler -Wextra")
-    set(CMAKE_CXX_FLAGS "-stdlib=libstdc++")
+    set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -Xcompiler -Wextra")
     set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -ccbin /usr/bin/gcc-5")
+    #set(CMAKE_CXX_FLAGS "-stdlib=libstdc++")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
   endif (UNIX)
 
   # add debugging to CUDA NVCC flags.  For NVidia's NSight tools.
-  set(CUDA_NVCC_FLAGS_DEBUG ${CUDA_NVCC_FLAGS_DEBUG} "-G")
+  #set(CUDA_NVCC_FLAGS_DEBUG ${CUDA_NVCC_FLAGS_DEBUG} "-G")
 
   add_subdirectory ("Problem Sets/Problem Set 1")
   add_subdirectory ("Problem Sets/Problem Set 2")
