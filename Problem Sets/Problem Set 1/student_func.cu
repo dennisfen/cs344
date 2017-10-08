@@ -8,13 +8,13 @@
 
 //Each channel Red, Blue, Green and Alpha is represented by one byte.
 //Since we are using one byte for each color there are 256 different
-//possible values for each color.  This means we use 4 bytes per pixel.
+//possible values for each color. This means we use 4 bytes per pixel.
 
 //Greyscale images are represented by a single intensity value per pixel
 //which is one byte in size.
 
 //To convert an image from color to grayscale one simple method is to
-//set the intensity to the average of the RGB channels.  But we will
+//set the intensity to the average of the RGB channels. But we will
 //use a more sophisticated method that takes into account how the eye 
 //perceives color and weights the channels unequally.
 
